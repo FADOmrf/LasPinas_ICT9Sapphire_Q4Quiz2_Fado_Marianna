@@ -137,12 +137,25 @@
       let rating = "";
       let ratingBucket = 0;
 
-      if (average >= 94 && average <= 100) ratingBucket = 1;
-      else if (average >= 87 && average < 94) ratingBucket = 2;
-      else if (average >= 80 && average < 87) ratingBucket = 3;
-      else if (average >= 75 && average < 80) ratingBucket = 4;
-      else if (average >= 70 && average < 75) ratingBucket = 5;
-      else ratingBucket = 6;
+      switch (true) {
+        case (average >= 94 && average <= 100):
+          ratingBucket = 1;
+          break;
+        case (average >= 87 && average < 94):
+          ratingBucket = 2;
+          break;
+        case (average >= 80 && average < 87):
+          ratingBucket = 3;
+          break;
+        case (average >= 75 && average < 80):
+          ratingBucket = 4;
+          break;
+        case (average >= 70 && average < 75):
+          ratingBucket = 5;
+          break;
+        default:
+          ratingBucket = 6;
+      }
 
       switch (ratingBucket) {
         case 1:
